@@ -98,31 +98,32 @@ width: 180px;
 
 @media (max-width: 500px) {
 .circle {
-width: 300px;
+width: 400px;
 height: 300px;
 }
 
 .char {
-width: 40px;
-height: 40px;
+width: 50px;
+height: 50px;
 }
 
 #main-image {
-width: 60px;
-height: 60px;
-top: 40%;
+width: 150px;
+height: 150px;
+top: 50%;
 }
 
 #char-name {
-font-size: 14px;
-top: 56%;
+font-size: 16px;
+top: 74%;
 }
 
 #char-description {
-font-size: 10px;
-top: 64%;
+font-size: 12px;
+top: 82%;
 width: 140px;
 }
+
 
 .toggle-mode {
 top: 10px;
