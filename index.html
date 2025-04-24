@@ -5,15 +5,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArcAnime</title>
   <link rel="stylesheet" href="style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9644072380914605"
-     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+   /* Base structure */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+.menu-icon {
+  font-size: 30px;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1002; /* above sidebar */
+  color: white;
+  background-color: transparent;
+}
+
+/* Hide one icon at a time */
+.open-icon,
+.close-icon {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+#menu-toggle:checked + .menu-icon .open-icon {
+  display: none;
+}
+
+#menu-toggle:checked + .menu-icon .close-icon {
+  display: block;
+}
+
+#menu-toggle:not(:checked) + .menu-icon .close-icon {
+  display: none;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #333;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* When menu is toggled */
+#menu-toggle:checked ~ .sidebar {
+  left: 0;
+}
+
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;  /* <-- fix: changed from #333 to white */
+  padding: 10px;
+}
+
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  background-color: transparent;
+  color: #444;
+  z-index: 1000;
+  text-align: right;
+}
+
+/* Desktop view (768px and above) */
+@media (min-width: 768px) {
+  .footer {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+
+
+  </style>
 
 </head>
 <body data-theme="dark">
   <button class="toggle-mode" onclick="toggleTheme()">Toggle Mode</button>
 
-   <h2>Welcome to ArcAnime</h2>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span class="open-icon">&#9776;</span>
+      <span class="close-icon">&#10006;</span>
+    </label>
+    <nav class="sidebar">
+      <ul>
+        <li ><a href="https://rupendragoku.github.io/shopingwebsite/"><img src="Backgrounds/logo1.png" class="logo-img">Home</a></li>
+        <li><a href="#">ver : r1.0</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  
+  <h2>Welcome to ArcAnime</h2>
   <br>
   <div class="circle" id="circle">
     <img id="main-image" src="images/12.png" alt="Character">
@@ -22,5 +164,10 @@
   </div>
 
 <script src="script.js"></script>
+<footer class="footer">
+  ver : r1.2<br>
+  developed by Rupendra
+</footer>
+
 </body>
 </html>
