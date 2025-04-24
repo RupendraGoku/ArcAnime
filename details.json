@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Latios",
+        "description": "A Water-type Pokémon that swims gracefully and shoots powerful jets of water from its snout when threatened.",
+        "img": "hdimages/latios.png"
+      },
+    {
+      "name": "Charmeleon",
+      "description": "When it swings its burning tail, the temperature around it rises higher and higher, tormenting its opponents.",
+      "img": "hdimages/charmeleon.png"
+    },
+    {
+      "name": "Blastoise",
+      "description": "It deliberately increases its body weight so it can withstand the recoil of the water jets it fires.",
+      "img": "hdimages/Blastois.png"
+    },
+    {
+      "name": "Butterfree",
+      "description": "It loves the nectar of flowers and can locate flower patches that have even tiny amounts of pollen.",
+      "img": "hdimages/butterfree.png"
+    },
+    {
+      "name": "Pikachu",
+      "description": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+      "img": "hdimages/pika.png"
+    },
+    {
+      "name": "Venonate",
+      "description": "Poison oozes from all over its body. It catches small bug Pokémon at night that are attracted by light.",
+      "img": "images/5.png"
+    },
+    {
+      "name": "Meowth",
+      "description": "A feline Pokémon that loves shiny objects.",
+      "img": "images/6.png"
+    },
+    {
+      "name": "Arcanine",
+      "description": "An ancient picture scroll shows that people were captivated by its movement as it ran through prairies.",
+      "img": "images/7.png"
+    },
+    {
+      "name": "Alakazam",
+      "description": "It has an incredibly high level of intelligence. Some say that Alakazam remembers everything that ever happens to it, from birth till death.",
+      "img": "images/8.png"
+    },
+    {
+      "name": "Machamp",
+      "description": "It punches with its four arms at blinding speed. It can launch 1,000 punches in two seconds.",
+      "img": "images/9.png"
+    },
+    {
+      "name": "Pidgeot",
+      "description": "This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.",
+      "img": "hdimages/pidgeot.png"
+    },
+    {
+      "name": "Clefairy",
+      "description": "On nights with a full moon, Clefairy gather from all over and dance. Bathing in moonlight makes them float.",
+      "img": "hdimages/Clefairy.png"
+    },
+    {
+      "name": "MewTwo",
+      "description": "Its DNA is almost the same as Mew’s. However, its size and disposition are vastly different.",
+      "img": "hdimages/mewtwo.png"
+    }
+  ]
+  

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Profile</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+body {
+    text-align: center;
+    padding: 40px;
+    font-family: Arial;
+    font-size:20px;
+    background-image: url(Backgrounds/b2.jpg);
+    background-size: cover;
+  }
+  img {
+  width: 30rem;
+  filter: drop-shadow(5mm 2mm rgb(173, 136, 92));
+}
+
+
+@media (max-width: 500px) {
+  body {
+    background-image: url(Backgrounds/bl3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 88vh;
+    padding: 20px;
+  }
+
+  img {
+      width: 25rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 22px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <h1 id="char-name">Loading...</h1>
+  <img id="char-image" src="" alt="" />
+  <p id="char-description"></p>
+
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const charName = getQueryParam('name');
+
+    axios.get('details.json')
+      .then(response => {
+        const characters = response.data;
+        const character = characters.find(c => c.name === charName);
+
+        const selectedCharacter = character || {
+          name: "Horsea",
+          description: "A Water-type Pokémon that swims gracefully and shoots powerful jets of water from its snout when threatened.",
+          img: "images/12.png"
+        };
+
+        document.getElementById('char-name').textContent = selectedCharacter.name;
+        document.getElementById('char-image').src = selectedCharacter.img;
+        document.getElementById('char-image').alt = selectedCharacter.name;
+        document.getElementById('char-description').textContent = selectedCharacter.description;
+      })
+      .catch(error => {
+        console.error("Error loading character data:", error);
+        document.getElementById('char-name').textContent = "Horsea";
+        document.getElementById('char-image').src = "images/12.png";
+        document.getElementById('char-image').alt = "Horsea";
+        document.getElementById('char-description').textContent =
+          "A Water-type Pokémon that swims gracefully and shoots powerful jets of water from its snout when threatened.";
+      });
+  </script>
+</body>
+</html>
