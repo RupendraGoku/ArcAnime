@@ -1,0 +1,193 @@
+:root {
+  --bg-color: #000;
+  --text-color: #fff;
+}
+
+[data-theme="light"] {
+  --bg-color: #f0f0f0;
+  --text-color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-mode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.circle {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.char {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--text-color);
+}
+
+.char.selected {
+  box-shadow: 0px 0px 20px 20px rgb(75, 74, 74);
+}
+
+#main-image {
+  position: absolute;
+  top: 38%;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  z-index: 10;
+  transition: transform 0.4s ease;
+  transform-origin: center center;
+}
+
+.silhouette {
+  filter: brightness(0%) contrast(200%);
+}
+
+#char-name {
+  position: absolute;
+  top: 52%;
+  left: 48%;
+  font-size: 16px;;
+  text-align: center;
+}
+
+#char-description {
+  position: absolute;
+  top: 55%;
+  font-size: 14px;
+  text-align: center;
+  width: 220px;
+  padding: 0 10px;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -23rem;
+  z-index: 10;
+}
+
+.poke-ball {
+  height: 4rem;
+  width: 4rem;
+  margin-top: 100%;
+}
+
+.glow {
+  box-shadow: 0 0 15px yellow;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#main-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+#torch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(82, 238, 4, 0.407) 0%, transparent 60%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.circle-wrapper {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  margin: 20px auto;
+  transition: transform 1s ease;
+}
+
+.rotate-btn {
+  margin-top: 20rem;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+
+
+@media (max-width: 500px) {
+/* .circle {
+width: 300px;
+height: 300px;
+} */
+
+/* .char {
+width: 40px;
+height: 40px;
+} */
+
+#main-image {
+width: 80px;
+height: 80px;
+top: 40%;
+}
+
+#char-name {
+font-size: 14px;
+top: 52%;
+left: 42%;
+}
+
+#char-description {
+font-size: 10px;
+top: 54%;
+width: 140px;
+}
+
+.toggle-mode {
+top: 10px;
+right: 20px;
+padding: 6px 12px;
+font-size: 12px;
+}
+
+}
